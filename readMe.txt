@@ -1,6 +1,6 @@
 Run the Following Commands, in order to build and execute the Program from Command Prompt
 
-command 1:  grdale build
+command 1:  gradle build
     Once the build is completed(i.e. jar is created) trigger the following command
 
 command 2: java -jar "<project_home>/build/libs/largeFileOperations-0.0.1-SNAPSHOT.jar "<JSON_FILE_PATH>"
