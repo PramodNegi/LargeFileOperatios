@@ -41,4 +41,8 @@ public class EventService {
 		return eventDAO.getEventById(evetId);
 	}
 	
+	@Transactional(readOnly=true)
+	public List<Event> getEventsWithMaxDuration(){
+		return eventDAO.getEventsWithMaxDuration();
+	}
 }

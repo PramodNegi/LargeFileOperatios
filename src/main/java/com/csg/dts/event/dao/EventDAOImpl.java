@@ -44,4 +44,11 @@ public class EventDAOImpl implements EventDAO {
 		List<Event> eventsList = (List<Event>)query.getResultList();
 		return eventsList;
 	}
+
+	@Override
+	public List<Event> getEventsWithMaxDuration() {
+		TypedQuery<Event> query = entityManager.createNamedQuery(Event.FIND_ALL_ALERTED_EVENTS_MAX_DURATION, Event.class);
+		List<Event> eventsList = (List<Event>)query.getResultList();
+		return eventsList;
+	}
 }

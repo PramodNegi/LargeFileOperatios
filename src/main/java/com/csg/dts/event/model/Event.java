@@ -13,11 +13,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "EVENTS")
 @NamedQueries(value={@NamedQuery(name=Event.FIND_ALL_ALERTED_EVENTS, query="SELECT E FROM Event E where E.alert=true"),
-				@NamedQuery(name=Event.FIND_ALL_EVENTS, query="SELECT E FROM Event E")})
+				@NamedQuery(name=Event.FIND_ALL_EVENTS, query="SELECT E FROM Event E"),
+				@NamedQuery(name=Event.FIND_ALL_ALERTED_EVENTS_MAX_DURATION, query="SELECT E FROM Event E where E.alert = true and E.duration = (SELECT MAX(E2.duration) FROM Event E2)")})
 public class Event {
 
 	public static final String FIND_ALL_EVENTS="findAllEvents";
 	public static final String FIND_ALL_ALERTED_EVENTS="findAllAlerted";
+	public static final String FIND_ALL_ALERTED_EVENTS_MAX_DURATION="findAllAlertedWithMaxDuration";
 	
 	
 	@Id

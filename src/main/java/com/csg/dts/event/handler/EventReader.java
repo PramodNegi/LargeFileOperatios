@@ -15,7 +15,9 @@ import com.csg.dts.execption.ApplicationRuntimeException;
 
 @Component
 public class EventReader {
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventReader.class);
+	
 	public void startReading(final String filePath, final BlockingQueue<String> blockingQueue) {
 		Thread readerThread = new Thread(new EventReaderThread(filePath, blockingQueue));
 		readerThread.start();

@@ -15,4 +15,6 @@ public interface EventDAO {
 	List<Event> getAllAlertedEvents();
 	
 	List<Event> getAllEvents();
+
+	List<Event> getEventsWithMaxDuration();
 }
