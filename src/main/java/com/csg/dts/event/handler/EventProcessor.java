@@ -64,12 +64,14 @@ public class EventProcessor implements Processor<BlockingQueue<String>>{
 			if (persistedEvent == null) {
 				eventService.create(event);
 			} else {
-				Long timeStampDiff = getTimestampDiff(persistedEvent.getTimestamp(), event.getTimestamp());
-				persistedEvent.setDuration(timeStampDiff);
-				if(timeStampDiff > 4) {
-					persistedEvent.setAlert(true);
-				}
-				eventService.update(persistedEvent);
+				if(persistedEvent.getDuration()== null) {
+					Long timeStampDiff = getTimestampDiff(persistedEvent.getTimestamp(), event.getTimestamp());
+					persistedEvent.setDuration(timeStampDiff);
+					if(timeStampDiff > 4) {
+						persistedEvent.setAlert(true);
+					}
+					eventService.update(persistedEvent);
+					}
 			}
 		}
 
