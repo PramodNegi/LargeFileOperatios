@@ -19,3 +19,4 @@ Process to run the program from Eclipse IDE
 
 Asuumption Made:
 JSON file will not have any Entry Twice with State "STARTED" with Same ID.
+JSON file will not have any Entry Twice with State "FINISHED" with Same ID.
