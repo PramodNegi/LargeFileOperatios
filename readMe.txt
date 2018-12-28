@@ -15,3 +15,7 @@ Process to run the program from Eclipse IDE
    Search / Specify the Main Class com.csg.dts.processor.app.LargeFileProcessorApp
    Specify the File Path in Program Arguments under Arguments tab
    Hit Run button.
+
+
+Asuumption Made:
+JSON file will not have any Entry Twice with State "STARTED" with Same ID.
