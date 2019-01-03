@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Profile;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.csg.dts.event.validator.Validator;
 import com.csg.dts.execption.ApplicationException;
@@ -19,6 +20,7 @@ import com.csg.dts.processor.FileProcessor;
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.csg.dts"})
 @EntityScan(basePackages= {"com.csg.dts.event.model"})
+@EnableTransactionManagement
 @Profile("!test")
 public class LargeFileProcessorApp implements CommandLineRunner {
 	
